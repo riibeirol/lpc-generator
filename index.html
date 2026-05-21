@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-us" data-theme="light">
+<html lang="pt-br" data-theme="light">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-	<title>Universal LPC Sprite Sheet Character Generator</title>
+	<title>RSABOX · Montador de Personagem</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" integrity="sha384-DCY3M8xLkMu6c9IKcKbe+jHKMjelnwC0p+SBaxfHxoBYZWdJF2X400UdBCgATtAB" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles/loading.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/components/tree/recolors.css">
+	<link rel="stylesheet" href="styles/rsabox-theme.css">
 	<script src="https://unpkg.com/mithril@2.3.8/mithril.min.js" integrity="sha384-nlmjDO01tRRK0qMLxgrQdR3687yMuLHdKdwTkxa7feXSksjRmsaqG6Pv1DmNzAjb" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/classnames@2.5.1/index.js" integrity="sha384-yZ5lBIhc/erbKN+W+yrRuYTNoM3dwd0Rg2eKYqVq2bf2sUrgZxtUaaBbSscxnjRp" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous"></script>
@@ -17,23 +18,13 @@
 </head>
 <body>
 	<section id="header-left" class="sticky">
-		<div class="is-flex is-align-items-center is-flex-wrap-wrap" style="gap: 1rem;">
-			<h1 class="title is-4 mb-0">
-				Universal LPC Spritesheet Generator
-				<a href="https://github.com/liberatedpixelcup/Universal-LPC-Spritesheet-Character-Generator" class="ml-2">
-					<img src="sources/github-mark.png" alt="View on GitHub" style="width:24px;height:24px;vertical-align:middle;">
-				</a>
-			</h1>
-			<span class="subtitle is-6 mb-0 has-text-grey">
-				Free/Libre pixel art from the <a href="https://lpc.opengameart.org">Liberated Pixel Cup</a>
-				<span class="mx-2">|</span>
-				You must <a href="#credits-section">credit the authors</a>
-			</span>
-			<span id="sponsors-links" class="subtitle is-6 mb-0">
-				<a href="https://www.netlify.com/">Site previews by Netlify</a>
-				<span class="mx-2">|</span>
-				<a href="https://argos-ci.com?utm_source=LiberatedPixelCup&utm_campaign=oss">Visual testing by Argos</a>
-			</span>
+		<div class="rsa-header">
+			<div class="rsa-logo"><span>RSA</span></div>
+			<div class="rsa-titles">
+				<h1>Montador de Personagem</h1>
+				<p>Monte seu avatar pixel e envie pro Escritório Virtual</p>
+			</div>
+			<span class="rsa-tag">RSABOX</span>
 		</div>
 	</section>
 
