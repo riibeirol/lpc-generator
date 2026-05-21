@@ -60,7 +60,9 @@ export const Download = {
       downloadAsPNG("character-spritesheet.png");
     };
 
-    // Enviar direto pro rsabox via relay (POST /api/sprite no servidor local)
+    // Enviar direto pro rsabox via edge function pública (relay no Supabase).
+    // Substituiu o antigo localhost:8022 — funciona de qualquer máquina.
+    const RSABOX_RELAY = "https://bribmcfqbmhgktjfkbje.supabase.co/functions/v1/rsabox-sprite-relay";
     const sendToRsabox = async () => {
       if (!window.canvasRenderer) return;
       const params = new URLSearchParams(window.location.search);
@@ -74,18 +76,17 @@ export const Download = {
         const reader = new FileReader();
         reader.onload = async e => {
           try {
-            const res = await fetch("http://localhost:8022/api/sprite", {
+            const res = await fetch(RSABOX_RELAY, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ userId, data: e.target.result }),
             });
             if (!res.ok) throw new Error("falha no relay");
-            // Tenta fechar popup se aberto pelo rsabox
             if (window.opener) window.close();
             else alert("✓ Sprite enviado! Volte ao rsabox.");
           } catch (err) {
             console.error("Erro no relay:", err);
-            alert("Erro ao enviar. Verifique se o servidor está rodando.");
+            alert("Erro ao enviar pro rsabox. Tente de novo em instantes.");
           }
         };
         reader.readAsDataURL(blob);
