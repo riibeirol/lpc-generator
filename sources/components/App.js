@@ -3,8 +3,6 @@ import { state } from "../state/state.js";
 import { syncSelectionsToHash } from "../state/hash.js";
 import { Download } from "./download/Download.js";
 import { FiltersPanel } from "./FiltersPanel.js";
-import { Credits } from "./download/Credits.js";
-import { AdvancedTools } from "./advanced/AdvancedTools.js";
 import { renderCharacter } from "../canvas/renderer.js";
 
 export const App = {
@@ -48,8 +46,6 @@ export const App = {
     return m("div", [
       m(Download),
       m(FiltersPanel),
-      m(Credits),
-      m(AdvancedTools),
     ]);
   },
 };

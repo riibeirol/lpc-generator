@@ -27,7 +27,9 @@ export const BodyTypeSelector = {
         ? m("div.ml-4.mt-2", [
             m(
               "div.buttons.ml-4",
-              BODY_TYPES.map((type) =>
+              BODY_TYPES
+                .filter((type) => type === "male" || type === "female")
+                .map((type) =>
                 m(
                   "button.button.is-small",
                   {

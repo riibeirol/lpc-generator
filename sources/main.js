@@ -44,7 +44,6 @@ import { initHashChangeListener } from "./state/hash.js";
 // Import components
 import { App } from "./components/App.js";
 import { AnimationPreview } from "./components/preview/AnimationPreview.js";
-import { FullSpritesheetPreview } from "./components/preview/FullSpritesheetPreview.js";
 
 // Import performance profiler
 import { PerformanceProfiler } from "./performance-profiler.js";
@@ -89,10 +88,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Mount the components
   m.mount(document.getElementById("mithril-filters"), App);
   m.mount(document.getElementById("mithril-preview"), AnimationPreview);
-  m.mount(
-    document.getElementById("mithril-spritesheet-preview"),
-    FullSpritesheetPreview,
-  );
 });
 
 function clearLoadingIndicators() {
