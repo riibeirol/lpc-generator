@@ -46,7 +46,7 @@ export const state = {
   compactDisplay: false, // compact item variant display (smaller thumbnails)
   customUploadedImage: null, // custom uploaded image (Image object)
   customImageZPos: 0, // z-position for custom uploaded image
-  previewCanvasZoomLevel: 1, // zoom level for animation preview canvas
+  previewCanvasZoomLevel: 2, // zoom level for animation preview canvas (200% por padrão)
   fullSpritesheetCanvasZoomLevel: 1, // zoom level for full spritesheet preview canvas
   isRenderingCharacter: false, // true if a character render is in progress
   // License filters - all enabled by default (derived from LICENSE_CONFIG)
